@@ -4,7 +4,7 @@ import { books } from './Book'
 
 
 
-export const useCustomHook = (key:string,initalValue:books[]):[books[],React.Dispatch<React.SetStateAction<books[]>>] => {
+export const useCustomHook =(key:string,initalValue:books[]):[books[],React.Dispatch<React.SetStateAction<books[]>>] => {
   const [books,setBooks]=useState<books[]>(()=>{
     if(!initalValue) return 
     const data= localStorage.getItem(key)

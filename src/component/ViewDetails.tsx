@@ -1,6 +1,8 @@
 import React from 'react'
 import { Table ,Button} from 'react-bootstrap';
 import { books } from './Book';
+import {ComponentA} from "./ComponentA"
+import { ComponentB } from './ComponentB';
 
 interface Props{
   books:books[],
@@ -24,7 +26,7 @@ export const ViewDetails = ({books,handleDelet,handleEdit}:Props) => {
 
         </thead>
         <tbody>
-          {books.length > 0 && books.map((e: books) => (
+          {books?.map((e: books) => (
             <>
               <tr key={e.id}>
                 <td>{e.title}</td>
@@ -42,6 +44,13 @@ export const ViewDetails = ({books,handleDelet,handleEdit}:Props) => {
 
         </tbody>
       </Table>
+
+<div style={{marginBottom:"115px"}}>
+<ComponentA/>
+  </div>     
+
+      <ComponentB/>
+      
 
     </div>
   )
